@@ -54,7 +54,7 @@ class MainMenu(tk.Frame):
         self.lbl_title = tk.Label(self, text="Trivia Quiz", font=TITLE_FONT)
         self.lbl_title.grid(row=0, column=0, columnspan=3, sticky='news')
         
-        self.btn_play = tk.Button(self, text="Play")
+        self.btn_play = tk.Button(self, text="Play", command=self.go_triviasetup)
         self.btn_play.grid(row=1, column=1, sticky='news')
         
         self.btn_highscore = tk.Button(self, text="Highscore", command=self.go_leaderboard)
@@ -67,6 +67,15 @@ class MainMenu(tk.Frame):
         
     def go_leaderboard(self):
         leader_frame.tkraise()
+        
+    def go_triviasetup(self):
+        popup = tk.Tk()
+        popup.title("")
+        
+        frm_setup = TriviaSetup(popup)
+        frm_setup.grid(row=0, column=0, sticky='news')
+        popup.grid_columnconfigure(0, weight=1)        
+        
 
 class Leaderboard(tk.Frame):
     def __init__(self):
@@ -91,8 +100,31 @@ class Leaderboard(tk.Frame):
 
 
 class TriviaSetup(tk.Frame):
-    pass
-
+    def __init__(self, parent):
+        tk.Frame.__init__(self, master=parent)
+        self.parent = parent
+        
+        self.lbl_category = tk.Label(self, text="Trivia Category:")
+        self.lbl_category.grid(row=0, column=0, sticky='news')
+        
+        self.lbl_player = tk.Label(self, text="Player:")
+        self.lbl_player.grid(row=1, column=0, sticky='news')
+        
+        self.categories = ["History", "Geography", "Videogames", "Music", "Random"]
+        self.tkvar_categories = tk.StringVar(self)
+        self.tkvar_categories.set(self.categories[4])
+        self.dbx_category = tk.OptionMenu(self, self.tkvar_categories, *self.categories)
+        self.dbx_category.grid(row=0, column=1, sticky='news')
+        
+        self.ent_player = tk.Entry(self)
+        self.ent_player.grid(row=1, column=1, sticky='news')
+        
+        self.btn_confirm = tk.Button(self, text="Confirm", command=self.go_trivia)
+        self.btn_confirm.grid(row=2, column=0, columnspan=2)
+        
+    def go_trivia(self):
+        self.parent.destroy()
+        
 # Functions
 
 
@@ -109,6 +141,8 @@ if __name__ == "__main__":
     
     leader_frame = Leaderboard()
     leader_frame.grid(row=0, column=0, sticky='news')
+    
+    
     
     main_frame.tkraise()
     root.grid_columnconfigure(0, weight=1)
