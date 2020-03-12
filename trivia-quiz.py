@@ -124,12 +124,22 @@ class TriviaSetup(tk.Frame):
         
     def go_trivia(self):
         self.parent.destroy()
+
+class Quiz(tk.Frame):
+    def __init__(self):
+        tk.Frame.__init__(self)
+
+
+class Question(tk.Frame):
+    def __init__(self):
+        tk.Frame.__init__(self)
+        
         
 # Functions
 
 
 # Main
-if __name__ == "__main__":
+if __name__ == "__main__":  
     content = Data()
     root = tk.Tk()
     root.title("")
@@ -141,9 +151,7 @@ if __name__ == "__main__":
     
     leader_frame = Leaderboard()
     leader_frame.grid(row=0, column=0, sticky='news')
-    
-    
-    
+       
     main_frame.tkraise()
     root.grid_columnconfigure(0, weight=1)
     root.mainloop()
