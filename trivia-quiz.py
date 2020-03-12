@@ -12,6 +12,7 @@ from tkinter.scrolledtext import ScrolledText
 from tkinter import messagebox
 import data_reboot as dr
 
+
 # Constants
 TITLE_FONT = ("Times New Roman", 24)
 
