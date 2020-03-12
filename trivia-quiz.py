@@ -11,7 +11,7 @@ import tkinter as tk
 from tkinter.scrolledtext import ScrolledText
 from tkinter import messagebox
 import data_reboot as dr
-
+import questions as qs
 
 # Constants
 TITLE_FONT = ("Times New Roman", 24)
@@ -124,14 +124,56 @@ class TriviaSetup(tk.Frame):
         self.btn_confirm.grid(row=2, column=0, columnspan=2)
         
     def go_trivia(self):
+        quiz_frame.tkraise()
         self.parent.destroy()
 
-class Quiz(tk.Frame):
+class QuizFrame(tk.Frame):
     def __init__(self):
         tk.Frame.__init__(self)
+        
+        self.lbl_score = tk.Label(self, text="Score:")
+        self.lbl_score.grid(row=0, column=0, columnspan=2, sticky='news')
+        
+        self.lbl_player = tk.Label(self, text="Player:")
+        self.lbl_player.grid(row=0, column=3, columnspan=2, sticky='news')
+        
+        self.btn_question1 = tk.Button(self, text="1")
+        self.btn_question1.grid(row=1, column=0, sticky='news')
+        
+        self.btn_question2 = tk.Button(self, text="2")
+        self.btn_question2.grid(row=1, column=1, sticky='news')        
 
-
-class Question(tk.Frame):
+        self.btn_question3 = tk.Button(self, text="3")
+        self.btn_question3.grid(row=1, column=2, sticky='news')
+        
+        self.btn_question4 = tk.Button(self, text="4")
+        self.btn_question4.grid(row=1, column=3, sticky='news')
+        
+        self.btn_question5 = tk.Button(self, text="5")
+        self.btn_question5.grid(row=1, column=4, sticky='news')
+        
+        self.btn_question6 = tk.Button(self, text="6")
+        self.btn_question6.grid(row=2, column=0, sticky='news')
+        
+        self.btn_question7 = tk.Button(self, text="7")
+        self.btn_question7.grid(row=2, column=1, sticky='news')
+        
+        self.btn_question8 = tk.Button(self, text="8")
+        self.btn_question8.grid(row=2, column=2, sticky='news')        
+        
+        self.btn_question9 = tk.Button(self, text="9")
+        self.btn_question9.grid(row=2, column=3, sticky='news')
+        
+        self.btn_question10 = tk.Button(self, text="10")
+        self.btn_question10.grid(row=2, column=4, sticky='news')
+        
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_columnconfigure(1, weight=1)
+        self.grid_columnconfigure(2, weight=1)
+        self.grid_columnconfigure(3, weight=1)
+        self.grid_columnconfigure(4, weight=1)
+        
+class QuestionFrame(tk.Frame):
     def __init__(self):
         tk.Frame.__init__(self)
         
@@ -145,14 +187,17 @@ if __name__ == "__main__":
     root = tk.Tk()
     root.title("")
     root.resizable(False,False)
-    root.geometry("400x450")
+    root.geometry("520x650")
     
     main_frame = MainMenu()
     main_frame.grid(row=0, column=0, sticky='news')
     
     leader_frame = Leaderboard()
     leader_frame.grid(row=0, column=0, sticky='news')
-       
+    
+    quiz_frame = QuizFrame()
+    quiz_frame.grid(row=0, column=0, sticky='news')
+    
     main_frame.tkraise()
     root.grid_columnconfigure(0, weight=1)
     root.mainloop()

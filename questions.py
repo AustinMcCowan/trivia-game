@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 # Austin McCowan and Chris Huffman
 # 3/12/2020
 
@@ -26,15 +26,24 @@ class Questions(object):
                          "Who was the first King of England":[("Æthelstan", 1),("King George I", 0),("King Charles I", 0),("Ælfweard", 0)],
                          "Who created the hot dog in 1901?":[("Harry M. Stevens", 1),("Thomas Alva Edison", 0),("George Crum", 0),("Colonel Sanders", 0)], }
         
-        self.music = {  "":[("",),("",),("",),("",)],
-                         "":[("",),("",),("",),("",)],
-                         "":[("",),("",),("",),("",)],
-                         "":[("",),("",),("",),("",)],
-                         "":[("",),("",),("",),("",)],
-                         "":[("",),("",),("",),("",)],
-                         "":[("",),("",),("",),("",)],
-                         "":[("",),("",),("",),("",)],
-                         "":[("",),("",),("",),("",)],
-                         "":[("",),("",),("",),("",)], }
+        self.music = {  "Who wrote the National Anthem of the USA?":[('Francis Scott Key', 1), ('George Washington',0), ('Harry Truman', 0), ('Rosa Parks', 0)],
+                        "What is the most vieed music video?":[('Despacito', 1), ('Gangnam Style',0), ('Uptown Funk', 0), ('Baby Shark', 0)],
+                        "Elvis Presley was often referred to as the king of:":[('Rock and Roll', 1), ('Jazz',0), ('Swing', 0), ('Disco', 0)],
+                        "What is the oldest instrument?":[('The Flute', 1), ('The Drum',0), ('The Harp', 0), ('The Tambourine', 0)],
+                        "Who is known as 'The King of Pop'?":[('Michael Jackson', 1), ('Elton John',0), ('Elvis Presley', 0), ('David Bowie', 0)],
+                        "Who is the lead singer of Queen?":[('Freddie Mercury', 1), ('Brian May',0), ('Roger Taylor', 0), ('John Deacon', 0)],
+                        "Who sang 'My Heart Will Go On'?":[('Celine Dion', 1), ('Selena Perez',0), ('Justice Bieber', 0), ('Kate Winslet', 0)],
+                        "What band wrote the hit song 'All-Star'?":[('Smash Mouth', 1), ('Queen',0), ('ACDC', 0), ('Kiss', 0)],
+                        "Who wrote Symphony No. 5 in C minor?":[('Beethoven', 1), ('Mozart',0), ('Johannes Brahms', 0), ('Tchaikovsky', 0)],
+                        "How many DragonForce - Inhuman Rampage albums were sold in the US?":[('350K', 1), ('60K',0), ('202K', 0), ('430K', 0)] }
         
-        self.geography = {}
+        self.geography = { "What is Pangea?":[('A supercontinent', 1), ('A contagious virus',0), ('An ancient warrior tribe', 0), ('A volcano', 0)],
+                               "What was the ocean that surrounded Pangea?":[('Panthalassa', 1), ('Pacific',0), ('Panthagera', 0), ('Atlantis', 0)],
+                               "How many main islands does Hawaii have?":[('8', 1), ('5',0), ('4', 0), ('7', 0)],
+                               "What is the longets river in the world?":[('Nile River', 1), ('Amazon River',0), ('Mississippi River', 0), ('Yangtze River', 0)],
+                               "What is the tallets mountain in the world?":[('Mount Everest', 1), ('Cho Oyu',0), ('Annapruna', 0), ('Makalu', 0)],
+                               "How many prefectures are in Japan?":[('47', 1), ('102',0), ('13', 0), ('77', 0)],
+                               "How far away is Alaska from Russia in miles?":[('55', 1), ('102',0), ('13', 0), ('77', 0)],
+                               "What is the biggest country?":[('Russia', 1), ('Canada',0), ('Australia', 0), ('China', 0)],
+                               "Where are the Rocky Mountains mainly located?":[('USA', 1), ('Mexico',0), ('Europe', 0), ('Africa', 0)],
+                               "What is the deepest point on Earth?":[('The Great Mariana Trench', 1), ('The Grand Canyon',0), ('Horizon Deep', 0), ('Brahmapurta Canyon', 0)]}
